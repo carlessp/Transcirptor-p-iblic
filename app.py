@@ -160,10 +160,18 @@ if st.button("🚀 Generar Transcripció"):
 if st.session_state.transcripcio_feta:
     st.markdown("---")
     st.subheader("Resultat de la transcripció")
-    text_resultat = st.text_area("Pots editar el text:", st.session_state.transcripcio_feta, height=400)
     
+    # Vinculem el text_area directament a la clau del session_state.
+    # Això fa que qualsevol edició actualitzi automàticament st.session_state.transcripcio_feta
+    st.text_area(
+        "Pots editar el text directament aquí:", 
+        key="transcripcio_feta", 
+        height=400
+    )
+    
+    # Ara el botó de descàrrega sempre tindrà la versió actualitzada (l'editada)
     st.download_button(
         label="Baixar transcripció (.txt)", 
-        data=text_resultat, 
-        file_name=f"transcripcio_logopedia.txt"
+        data=st.session_state.transcripcio_feta, 
+        file_name="transcripcio_logopedia.txt"
     )
