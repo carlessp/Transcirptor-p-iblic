@@ -43,7 +43,7 @@ if not api_key:
     st.stop()
 
 genai.configure(api_key=api_key)
-# Utilitzem gemini-1.5-flash per a una millor estabilitat actual
+
 model = genai.GenerativeModel("gemini-2.5-flash") 
 
 # --- SELECCIÓ DE FONT D'ENTRADA (AQUESTA ÉS L'ÚNICA INSTÀNCIA) ---
