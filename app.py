@@ -20,7 +20,7 @@ if not api_key:
     st.info("Si us plau, introdueix la teva API Key de Gemini a la barra lateral per començar.", icon="🔑")
 else:
     genai.configure(api_key=api_key)
-    model = genai.GenerativeModel("gemini-1.5-flash")
+    model = genai.GenerativeModel("gemini-2.5-flash")
 
     # 2. Pujada del fitxer
     uploaded_file = st.file_uploader("Puja el vídeo de l'alumne (mp4, mov, avi)", type=['mp4', 'mov', 'avi'])
