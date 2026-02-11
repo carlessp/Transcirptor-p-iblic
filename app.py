@@ -93,7 +93,7 @@ if url_per_reproductor:
         st.video(url_per_reproductor)
 
 # --- BOTÓ DE PROCESSAMENT ---
-if st.button("🚀 Generar Transcripció"):
+if st.button("🚀 Genera la transcripció"):
     tmp_path = None
     try:
         with st.spinner("Preparant i analitzant el fitxer..."):
